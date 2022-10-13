@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        header {
+            height: fit-content;
+            text-align: center;
+            transition: 2s linear;
+        }
+        
+        main {
+            display: flex;
+            margin: 0 auto;
+            width: fit-content;
+            height: fit-content;
+            border: 3px dotted black;
+            border-style: dashed;
+        }
+
+        .stone {
+            animation: roll 1.5s infinite linear, shrink 10s infinite linear;
+
+        }      
+    
+        @keyframes roll{
+        0%{
+            transform: rotate(0deg);
+        }
+        25%{
+            transform: rotate(90deg);
+        }
+        50%{
+            transform: rotate(180deg);
+        }
+        75%{
+            transform: rotate(270deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }}
+        
+        @keyframes shrink{
+        0%{
+            border-radius: 0%;
+        }
+        25%{
+            border-radius: 25%;
+        }
+        50%{
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            object-fit: none;
+        }
+        75%{
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: none;
+        }
+        100%{
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: none;
+        }}
+
+        header:hover{
+            color: red;
+            transform: rotateY(360deg);
+        }
+
+        .stone:hover {
+            /* animation-play-state: paused; */
+            animation: roll 0.75s infinite linear, shrink 10s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>How to polish a stone</h1>
+    </header>
+    <main>
+        <!-- <div> -->
+            <img src="stone.jpg" class="stone" alt="Stone">
+        <!-- </div> -->
+    </main>
+    <br><br><p style="text-align: center">Try to HOVER Header and picture.</p>
+</body>
+</html>
